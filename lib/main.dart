@@ -47,15 +47,15 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-TrackballBehavior _trackballbehavior1;
-TrackballBehavior _trackballbehavior2; 
+TrackballBehavior _trackballBehavior1;
+TrackballBehavior _trackballBehavior2;
 
 @override
-void initState(){
-  _trackballbehavior1 = 
-    TrackballBehavior(enable: true, activationMode: ActivationMode.singleTap);
-  _trackballbehavior2 = 
-    TrackballBehavior(enable: true, activationMode: ActivationMode.singleTap);
+void initState() {
+  _trackballBehavior1 =
+      TrackballBehavior(enable: true, activationMode: ActivationMode.singleTap);
+  _trackballBehavior2 =
+      TrackballBehavior(enable: true, activationMode: ActivationMode.singleTap);
 }
 
 class FirstChart extends StatefulWidget {
@@ -65,18 +65,17 @@ class FirstChart extends StatefulWidget {
   }
 }
 
-
 class FirstChartState extends State<FirstChart> {
   @override
   Widget build(BuildContext context) {
     return SfCartesianChart(
         onChartTouchInteractionMove: (ChartTouchInteractionArgs args) {
-          _trackballbehavior2.show(args.position.dx, args.position.dy, 'pixel');
+          _trackballBehavior2.show(args.position.dx, args.position.dy, 'pixel');
         },
         backgroundColor: Colors.white,
         primaryXAxis: CategoryAxis(),
         title: ChartTitle(text: 'Chart 1'),
-        trackballBehavior: _trackballbehavior1,
+        trackballBehavior: _trackballBehavior1,
         series: <LineSeries<SalesData, String>>[
           LineSeries<SalesData, String>(
               dataSource: <SalesData>[
@@ -111,12 +110,12 @@ class SecondChartState extends State<SecondChart> {
   Widget build(BuildContext context) {
     return SfCartesianChart(
         onChartTouchInteractionMove: (ChartTouchInteractionArgs args) {
-          _trackballbehavior1.show(args.position.dx, args.position.dy, 'pixel');
+          _trackballBehavior1.show(args.position.dx, args.position.dy, 'pixel');
         },
         backgroundColor: Colors.white,
         primaryXAxis: CategoryAxis(),
         title: ChartTitle(text: 'Chart 2'),
-        trackballBehavior: _trackballbehavior2,
+        trackballBehavior: _trackballBehavior2,
         series: <LineSeries<SalesData, String>>[
           LineSeries<SalesData, String>(
               dataSource: <SalesData>[
